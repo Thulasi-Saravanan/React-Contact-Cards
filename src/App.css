@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+.app {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.app h1 {
+    margin-bottom: 35px;
+    color: #222;
+}
+
+.like-card {
+    background: white;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.like-card h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.like-card p {
+    font-size: 17px;
+    color: #666;
+    margin: 20px 0;
+}
+
+.like-card button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.like-card button:hover {
+    opacity: 0.8;
+}
