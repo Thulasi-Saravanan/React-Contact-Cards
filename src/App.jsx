@@ -1,19 +1,22 @@
-import LikeCard from "./components/LikeCard";
+import { useState } from "react";
+import ContactForm from "./components/ContactForm";
+import UserList from "./components/UserList";
 import "./App.css";
 
 function App() {
+    const [users, setUsers] = useState([]);
+
+    const addUser = (newUser) => {
+        setUsers((previousUsers) => [...previousUsers, newUser]);
+    };
 
     return (
         <div className="app">
+            <h1>Contact Cards</h1>
 
-            <h1>React Like Card</h1>
+            <ContactForm onAddUser={addUser} />
 
-            <LikeCard title="React Development" />
-
-            <LikeCard title="Web Development" />
-
-            <LikeCard title="JavaScript" />
-
+            <UserList users={users} />
         </div>
     );
 }

@@ -1,20 +1,18 @@
 import { useState } from "react";
 
 function ContactForm({ onAddUser }) {
-
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
 
     const handleSubmit = (e) => {
-
         e.preventDefault();
 
         const newUser = {
             id: Date.now(),
-            name: name,
-            email: email,
-            phone: phone
+            name,
+            email,
+            phone
         };
 
         onAddUser(newUser);
@@ -25,9 +23,24 @@ function ContactForm({ onAddUser }) {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="contact-form">
-
-            <h2>Add Contact</h2>
+        <form
+            onSubmit={handleSubmit}
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "100%",
+                maxWidth: "500px",
+                margin: "0 auto 40px",
+                padding: "25px",
+                background: "#ffffff",
+                borderRadius: "12px",
+                boxShadow: "0 5px 20px rgba(0,0,0,0.1)",
+                boxSizing: "border-box"
+            }}
+        >
+            <h2 style={{ margin: "0 0 20px 0", color: "#222" }}>
+                Add Contact
+            </h2>
 
             <input
                 type="text"
@@ -35,6 +48,16 @@ function ContactForm({ onAddUser }) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
+                style={{
+                    width: "100%",
+                    height: "45px",
+                    padding: "12px",
+                    marginBottom: "15px",
+                    border: "1px solid #ccc",
+                    borderRadius: "8px",
+                    fontSize: "16px",
+                    boxSizing: "border-box"
+                }}
             />
 
             <input
@@ -43,6 +66,16 @@ function ContactForm({ onAddUser }) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                style={{
+                    width: "100%",
+                    height: "45px",
+                    padding: "12px",
+                    marginBottom: "15px",
+                    border: "1px solid #ccc",
+                    borderRadius: "8px",
+                    fontSize: "16px",
+                    boxSizing: "border-box"
+                }}
             />
 
             <input
@@ -51,12 +84,33 @@ function ContactForm({ onAddUser }) {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 required
+                style={{
+                    width: "100%",
+                    height: "45px",
+                    padding: "12px",
+                    marginBottom: "15px",
+                    border: "1px solid #ccc",
+                    borderRadius: "8px",
+                    fontSize: "16px",
+                    boxSizing: "border-box"
+                }}
             />
 
-            <button type="submit">
+            <button
+                type="submit"
+                style={{
+                    width: "100%",
+                    height: "45px",
+                    border: "none",
+                    borderRadius: "8px",
+                    background: "#222",
+                    color: "#fff",
+                    fontSize: "16px",
+                    cursor: "pointer"
+                }}
+            >
                 Add User
             </button>
-
         </form>
     );
 }
